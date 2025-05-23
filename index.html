@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yifan.dev | Home</title>
+
+    <!-- tailwindcss framework -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- flowbite -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <!-- custom config for tailwind css -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900">
+    
+    <!-- navigation bar -->
+    <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="/" class="flex items-center">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Yifan.dev</span>
+            </a>
+            <div class="flex md:order-2">
+                <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                </button>
+                <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="/index.html" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end navigation bar -->
+
+    <!-- hero section -->
+    <section class="bg-white dark:bg-gray-900 py-36">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+            <h4 class="text-2xl font-bold dark:text-white">Hey There 👋 I'm</h4>
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Yi Fan</span></h1>
+            <h1 class="mb-8 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">a <span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">Web Developer</span>.</h1>
+            <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+                <a href="mailto:leeyifan19@gmail.com" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80">
+                    Contact Me
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ml-2 -mr-1 w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg>
+                      
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- end hero section -->
+
+    <!-- break line -->
+    <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+            My Projects
+        </h2>
+        <p class="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
+            Client projects and other professional work.
+        </p>
+    </div>
+    <!-- end break line -->
+
+    <!-- Tasks 1 -->
+    <section id="journey1" class="bg-white dark:bg-gray-900">
+        <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+            <div>
+                <div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]">
+                    <div class="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800">
+                        <img src="assets/oas-light.png" class="dark:hidden h-[156px] md:h-[278px] w-full rounded-xl" alt="">
+                        <img src="assets/oas-dark.png" class="hidden dark:block h-[156px] md:h-[278px] w-full rounded-lg" alt="">
+                    </div>
+                </div>
+                <div class="relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]">
+                    <div class="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-gray-800"></div>
+                </div>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Online Admission System</h2>
+                <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
+                    Developing online admission systems using Laravel 9, a powerful PHP framework. These systems streamline the admissions process, making it easier and more efficient for both applicants and administrative staff.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Tasks 1 -->
+
+    <!-- Tasks 2 -->
+    <section id="journey1" class="bg-white dark:bg-gray-900">
+        <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+            <div class="mt-4 md:mt-0">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Content Management System - WordPress</h2>
+                <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
+                    Designing and deploying official websites using the WordPress platform on Internet Information Services (IIS). I utilize my creative skills to craft visually appealing and user-friendly websites that effectively represent the organization. <a href="https://www.southern.edu.my/" class="font-medium text-blue-600 underline dark:text-blue-500 dark:hover:text-blue-600 hover:text-blue-700 hover:no-underline">Visit the website</a>
+                </p>
+            </div>
+            <div>         
+                <div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[16px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]">
+                    <div class="rounded-xl overflow-hidden h-[140px] md:h-[262px]">
+                        <img src="assets/official-website.png" class="dark:hidden h-[140px] md:h-[262px] w-full rounded-xl" alt="">
+                        <img src="assets/official-website.png" class="hidden dark:block h-[140px] md:h-[262px] w-full rounded-xl" alt="">
+                    </div>
+                </div>
+                <div class="relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl h-[24px] max-w-[301px] md:h-[42px] md:max-w-[512px]"></div>
+                <div class="relative mx-auto bg-gray-800 rounded-b-xl h-[55px] max-w-[83px] md:h-[95px] md:max-w-[142px]"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Tasks 2 -->
+
+    <!-- Tasks 3 -->
+    <section id="journey1" class="bg-white dark:bg-gray-900">
+        <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+            
+            <div>
+                <div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]">
+                    <div class="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800">
+                        <img src="assets/openday-landing-page.png" class="dark:hidden h-[156px] md:h-[278px] w-full rounded-xl" alt="">
+                        <img src="assets/openday-landing-page.png" class="hidden dark:block h-[156px] md:h-[278px] w-full rounded-lg" alt="">
+                    </div>
+                </div>
+                <div class="relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]">
+                    <div class="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-gray-800"></div>
+                </div>
+            </div>
+
+            <div class="mt-4 md:mt-0">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Open Day - Landing Page</h2>
+                <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
+                    Creating open day landing pages for colleges, effectively showcasing information and engaging potential attendees. Additionally, customizing Google Forms using code, tailoring them to specific needs and requirements, enhancing functionality and user experience.
+                    <a href="https://yifanlee19.github.io/open-day-landing-page/" class="font-medium text-blue-600 underline dark:text-blue-500 dark:hover:text-blue-600 hover:text-blue-700 hover:no-underline">Visit the website</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Tasks 3 -->
+
+    <hr class="h-px mx-8 my-8 bg-gray-200 border-0 dark:bg-gray-700">
+
+    <!-- uiux intro -->
+    <section class="bg-white dark:bg-gray-900">
+        <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+            <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">UI is the saddle, the stirrups, & the reins. UX is the feeling you get being able to ride the horse.</h2>
+                <p class="mb-4">I spend my free time researching UI/UX. I firmly believe that no matter how perfect the code is, if the user doesn't have a great experience, it can't be truly great.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mt-8">
+                <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1">
+                <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2">
+            </div>
+        </div>
+    </section>
+    <!-- uiux intro -->
+
+    <!-- side projects -->
+    <section class="bg-white dark:bg-gray-900 antialiased">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+                    Design
+                </h2>
+                <p class="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
+                    Some of my spare time tinkering.
+                </p>
+            </div>
+        
+            <div class="grid grid-cols-1 mt-12 text-center sm:mt-16 gap-x-20 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="space-y-4">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        Case Study
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        JomFocus
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        JomFocus is an app that helps users avoid procrastination and stay focused in order to increase productivity.
+                    </p>
+                    <a href="https://www.behance.net/gallery/139849463/JomFocus-a-timer-app" title=""
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        role="button">
+                        View case study
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+        
+                <div class="space-y-4">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        UI Design
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        Online learning platform
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Designed to inspire and empower learners, our page invites you to embark on a journey of knowledge and personal growth.
+                    </p>
+                    <a href="https://www.behance.net/gallery/141353801/Online-learning-platform-Landing-page-design" title=""
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        role="button">
+                        View design
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+        
+                <div class="space-y-4">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        UI Design
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        NFTs Digital Art
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        With visually stunning graphics, explore the limitless possibilities of digital art, collectibles, and more. 
+                    </p>
+                    <a href="https://www.behance.net/gallery/140515877/Landing-page-NFTs-Digital-Art" title=""
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        role="button">
+                        View design
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="max-w-2xl my-12 mx-auto text-center">
+                <a href="https://www.behance.net/yifanlee" class="mt-4 text-base font-normal text-blue-500 sm:text-xl dark:text-blue-400">
+                    View more
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- side project -->
+
+    <hr class="h-px mx-8 my-8 bg-gray-200 border-0 dark:bg-gray-700">
+
+    <!-- timeline -->
+    <section class="bg-white dark:bg-gray-900 antialiased">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+                    The Journey of My Life
+                </h2>
+                <p class="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
+                    Web Developer · User Interfacec Design · User Experience Design
+                </p>
+            </div>
+            
+            <ol class="relative border-l border-gray-200 dark:border-gray-700 mt-8">  
+                <li class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">March 2023 - Present</time>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Study Bachelor of Software Engineering in Southern University College</h3>
+                    <p class="mt-2 text-base font-bold text-gray-500 dark:text-gray-400">March 2023 - Present</p>
+                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Part-time, Full-Stack Developer in Southern University College</p>
+                </li>   
+                <li class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">September 2022 - July 2023</time>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Full-Stack Developer in Southern University College</h3>
+                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Design, develop, and maintain campus management system, official website using WordPress, and provide technical support</p>
+                </li> 
+                <li class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">June 2022 - August 2022</time>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Internship in Southern University College</h3>
+                </li>        
+                <li class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">March 2020 - October 2022</time>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Complete Diploma in Information Technology</h3>
+                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">CGPA: 3.61</p>
+                    <p class="text-base font-bold text-gray-500 dark:text-gray-400">10 Sep - 30 Oct 2022</p>
+                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Participation in Online Hackathon of Odyssey Hackfest</p>
+                    <a href="https://drive.google.com/file/d/1bymj4otfX-N6DrkWhiBw7pi4xpzfwron/view?pli=1" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">View Certificate <svg class="w-3 h-3 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></a>
+                    <p class="mt-2 text-base font-bold text-gray-500 dark:text-gray-400">Dec 2021</p>
+                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Complete Start the UX Design Process: Empathize, Define, and Ideate from Google</p>
+                    <a href="https://coursera.org/share/4a0f7686e146a323e16c933ecca45f21" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">View Certificate <svg class="w-3 h-3 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></a>
+                    <p class="mt-2 text-base font-bold text-gray-500 dark:text-gray-400">Nov 2021</p>
+                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Complete Build Wireframes and Low-Fidelity Prototypes from Google</p>
+                    <a href="https://coursera.org/share/69a93eb9bf8101f33e200d0af2d8a520" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">View Certificate <svg class="w-3 h-3 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></a>
+                    <p class="mt-2 text-base font-bold text-gray-500 dark:text-gray-400">Oct 2021</p>
+                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Complete Foundation of User Experience (UX) Design from Google</p>
+                    <a href="https://coursera.org/share/f6f552b0079abbabd791ace9e8e4e900" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">View Certificate <svg class="w-3 h-3 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></a>
+                </li>
+                <li class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Dec 2019</time>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Complete Secondary School</h3>
+                </li>
+                <li class="ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">April 2019</time>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Third Place in Rubik's Cube Competition</h3>
+                    <p class="text-base font-normal text-gray-500 dark:text-gray-400">Achievement of earning the third place in the Rubik's Cube competition during the academic week at SMK Mutiara Rini in 2019</p>
+                </li>
+            </ol>
+
+        </div>
+    </section>
+    <!-- timeline -->
+
+    <!-- footer -->
+    <footer class="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800">
+        <div class="mx-auto max-w-screen-xl text-center">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© Developed by yifannotgoodprogrammer.</span>
+        </div>
+    </footer>
+    <!-- footer -->
+
+    <!-- flowbite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <!-- own js -->
+    <script src="js/darkModeSwitcher.js"></script>
+</body>
+</html>

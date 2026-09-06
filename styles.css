@@ -188,3 +188,17 @@ html{scroll-padding-top:110px}
  .bento-grid .case-featured .audit-preview{width:calc(100% + 16px);max-width:none;margin:0 -8px}
  .bento-grid .case-featured .lobster-wrap{right:-12px;bottom:0;width:92px;height:92px}
 }
+/* Tablet overview: one project per row with room for interface previews. */
+@media(min-width:601px) and (max-width:1100px){
+ .bento-grid.case-list{grid-template-columns:minmax(0,1fr);gap:22px}
+ .bento-grid .project.case-study:nth-child(n){grid-column:1;display:flex;flex-direction:column;min-height:0;gap:26px;padding:32px}
+ .bento-grid .case-heading{max-width:100%}
+ .bento-grid .case-heading h3{font-size:clamp(2rem,4vw,2.8rem)}
+ .bento-grid .case-body{width:100%;margin-top:0}
+ .bento-grid .case-preview{margin:0;padding:0}
+ .bento-grid .case-preview img{width:100%;height:auto;max-height:none;object-fit:contain}
+ .bento-grid .case-featured .case-body{padding:0 36px 20px}
+ .bento-grid .case-featured .audit-preview{width:100%;max-width:560px}
+ .bento-grid .case-featured .audit-preview img{width:100%;max-height:none}
+ .bento-grid .project.case-study.hidden{display:none}
+}

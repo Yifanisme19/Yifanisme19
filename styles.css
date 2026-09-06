@@ -171,3 +171,10 @@ html{scroll-padding-top:110px}
  .bento-grid .case-featured .audit-preview{width:calc(100% + 16px)}
  .bento-grid .case-featured .lobster-wrap{right:-12px;bottom:0}
 }
+/* Balance the audit thumbnail against the adjacent reward-shop preview. */
+.bento-grid .case-featured .audit-preview{width:100%;max-width:360px}
+.bento-grid .case-featured .lobster-wrap{left:min(280px,calc(100% - 100px));right:auto;bottom:-24px}
+@media(max-width:600px){
+ .bento-grid .case-featured .audit-preview{width:calc(100% + 16px);max-width:none}
+ .bento-grid .case-featured .lobster-wrap{left:auto;right:-12px;bottom:0}
+}

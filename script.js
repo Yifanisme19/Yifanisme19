@@ -3,11 +3,15 @@ const projects = document.querySelectorAll('.project');
 
 filters.forEach((button) => {
   button.addEventListener('click', () => {
-    filters.forEach((item) => item.classList.remove('active'));
+    filters.forEach((item) => { item.classList.remove('active'); item.setAttribute('aria-pressed', 'false'); });
     button.classList.add('active');
+    button.setAttribute('aria-pressed', 'true');
     const selected = button.dataset.filter;
     projects.forEach((project) => {
       project.classList.toggle('hidden', selected !== 'all' && project.dataset.category !== selected);
+    });
+    document.querySelectorAll('.work-group').forEach((group) => {
+      group.hidden = !group.querySelector('.project:not(.hidden)');
     });
   });
 });
@@ -33,7 +37,7 @@ document.querySelectorAll('.case-open').forEach((button) => {
     projectTrigger = button;
     const content = projectDialog.querySelector('.dialog-content');
     content.replaceChildren(project.querySelector('.case-heading').cloneNode(true), project.querySelector('.case-body').cloneNode(true));
-    content.querySelectorAll('.case-preview, .lobster-wrap, img').forEach((element) => element.remove());
+    content.querySelectorAll('.lobster-wrap').forEach((element) => element.remove());
     content.querySelector('h3').id = 'dialog-title';
     content.querySelectorAll('details').forEach((details) => { details.open = true; });
     previousOverflow = document.body.style.overflow;

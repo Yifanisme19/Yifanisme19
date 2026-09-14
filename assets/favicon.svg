@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>YF.</title>
+  <rect width="64" height="64" rx="15" fill="#07110e"/>
+  <g fill="#eef0e8">
+    <path d="M7 18h7l6 11 6-11h7L23 35v11h-6V35L7 18Z"/>
+    <path d="M33 18h19v6H39v6h11v6H39v10h-6V18Z"/>
+  </g>
+  <rect x="50" y="39" width="7" height="7" rx="1.5" fill="#c7ff38"/>
+</svg>

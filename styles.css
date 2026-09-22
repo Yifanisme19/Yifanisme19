@@ -274,3 +274,19 @@ html{scroll-padding-top:110px}
 /* Keep the CLI integration preview aligned with adjacent internal tools. */
 #work #project-cli .cli-overview{display:none}
 .dialog-content .cli-overview{margin-bottom:24px}
+
+/* A closed collection keeps personal builds separate from professional work. */
+.side-projects{padding-top:0;padding-bottom:90px}
+.side-collection{border:1px solid var(--line);border-radius:26px;overflow:hidden;background:#e1e8d7}
+.side-entry{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:40px;cursor:pointer}
+.side-entry::-webkit-details-marker{display:none}.side-entry:focus-visible{outline:3px solid var(--ink);outline-offset:-6px}
+.side-entry h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.1;letter-spacing:-.05em;margin:0 0 16px}.side-entry p:last-child{margin:0;color:var(--muted);font-size:.95rem}.side-entry .section-index{margin-bottom:16px}
+.side-entry-action{display:flex;flex-direction:column;align-items:flex-end;gap:20px;flex-shrink:0}.side-count{font:500 .7rem 'DM Mono',monospace;color:var(--muted)}
+.side-show,.side-hide{background:var(--ink);color:var(--paper);border-radius:30px;padding:14px 22px;font-size:.85rem;font-weight:700}.side-show>span,.side-hide>span{margin-left:20px}.side-hide{display:none}.side-collection[open] .side-show{display:none}.side-collection[open] .side-hide{display:block}
+.side-project-list{padding:0 28px 28px}.side-project{position:relative;display:grid;grid-template-columns:.8fr 1.2fr;gap:32px;padding:32px;border-radius:20px;background:var(--paper);min-height:0}
+.side-project .case-heading h3{font-size:1.75rem;line-height:1.2;letter-spacing:-.04em;margin:16px 0}.side-project .case-heading>p{font-size:.9rem}.side-project .project-num{font-size:.65rem}.side-project .tags{padding-top:8px}.side-project .tags span{font-size:.625rem;border-radius:5px}
+.side-project .case-preview{margin:0}.side-project .case-preview img{display:block;width:100%;height:auto;border-radius:10px}.side-project figcaption{font-size:.7rem;color:var(--muted);margin-top:8px}.side-project .case-details{display:none}
+.side-facts{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:20px;font:500 .7rem 'DM Mono',monospace;color:var(--muted)}
+.side-project .case-body{padding-top:32px}.dialog-content .side-facts{margin-bottom:24px}
+@media(max-width:850px){.side-project{grid-template-columns:1fr}.side-project .case-body{padding-top:0}.side-entry{padding:28px}.side-project-list{padding:0 18px 18px}}
+@media(max-width:520px){.side-entry{align-items:flex-start;flex-direction:column;gap:24px;padding:24px}.side-entry-action{align-items:flex-start;gap:12px}.side-project{padding:24px;gap:24px}.side-projects{padding-bottom:60px}}

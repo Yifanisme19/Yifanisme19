@@ -1,5 +1,5 @@
 const filters = document.querySelectorAll('.filter');
-const projects = document.querySelectorAll('.project');
+const projects = document.querySelectorAll('#work .project');
 
 filters.forEach((button) => {
   button.addEventListener('click', () => {

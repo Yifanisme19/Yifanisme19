@@ -1,0 +1,3 @@
+# Keep local career notes and superseded assets out of public deployments.
+career/
+assets/ui/social-banner-studio.png

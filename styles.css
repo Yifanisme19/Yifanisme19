@@ -275,14 +275,11 @@ html{scroll-padding-top:110px}
 #work #project-cli .cli-overview{display:none}
 .dialog-content .cli-overview{margin-bottom:24px}
 
-/* A closed collection keeps personal builds separate from professional work. */
+/* Keep personal builds separate from professional work. */
 .side-projects{padding-top:0;padding-bottom:52px}
 .side-collection{border:0;border-radius:0;overflow:visible;background:transparent}
-.side-entry{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:0;margin-bottom:22px;cursor:pointer}
-.side-entry::-webkit-details-marker{display:none}.side-entry:focus-visible{outline:3px solid var(--ink);outline-offset:-6px}
-.side-entry h2{font-size:1.45rem;line-height:1.15;letter-spacing:-.04em;margin:0 0 8px}.side-entry p:last-child{margin:0;color:var(--muted);font-size:.84rem}.side-entry .section-index{margin-bottom:8px}
-.side-entry-action{display:flex;flex-direction:column;align-items:flex-end;gap:12px;flex-shrink:0}.side-count{font:500 .65rem 'DM Mono',monospace;color:var(--muted)}
-.side-show,.side-hide{background:var(--ink);color:var(--paper);border-radius:30px;padding:11px 18px;font-size:.72rem;font-weight:700}.side-show>span,.side-hide>span{margin-left:16px}.side-hide{display:none}.side-collection[open] .side-show{display:none}.side-collection[open] .side-hide{display:block}
+.side-entry{list-style:none;display:grid;grid-template-columns:1fr 1fr;align-items:baseline;gap:32px;padding:0;margin-bottom:22px}
+.side-entry h2{font-size:1.45rem;line-height:1.15;letter-spacing:-.04em;margin:0}.side-entry-description{justify-self:end;width:100%;max-width:600px;margin:0;color:var(--muted);font-size:.88rem;line-height:1.5}
 .bento-grid.case-list.side-project-list{padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;border:0;background:none}
 .side-project-list .side-project.project.case-study{position:relative;isolation:isolate;display:flex;flex-direction:column;gap:20px;grid-column:auto;padding:28px;margin:0;border:1px solid rgba(7,17,14,.12);border-radius:18px;overflow:hidden;min-height:520px;transition:transform .2s,box-shadow .2s;background:#dcecf0;color:var(--ink)}
 .side-project.project.case-study:hover{transform:translateY(-4px);box-shadow:0 14px 30px #07110e12}
@@ -290,5 +287,5 @@ html{scroll-padding-top:110px}
 .side-project .case-body{margin-top:auto;display:grid;gap:18px;align-content:start;padding-top:0}.side-project .case-preview{margin:0;padding:0;height:auto;min-height:0;overflow:hidden;border:0;border-radius:0;background:transparent}.side-project .case-preview img{display:block;width:100%;height:auto;max-height:none;border-radius:10px;box-shadow:0 12px 30px #07110e15;object-fit:contain;object-position:top}.side-project figcaption{display:none}.side-project .case-details{display:none}
 .side-facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;font:500 .65rem 'DM Mono',monospace;color:var(--muted)}.dialog-content .side-facts{margin-bottom:24px}
 @media(max-width:1100px){.bento-grid.case-list.side-project-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:850px){.side-entry{padding:0 0 2px}.bento-grid.case-list.side-project-list{grid-template-columns:1fr}}
-@media(max-width:520px){.side-entry{align-items:flex-start;flex-direction:column;gap:24px;padding:24px}.side-entry-action{align-items:flex-start;gap:12px}.side-project{padding:24px;gap:20px;min-height:0}.side-projects{padding-bottom:60px}}
+@media(max-width:850px){.side-entry{padding:0 0 2px;grid-template-columns:1fr;gap:8px}.side-entry-description{justify-self:start}.bento-grid.case-list.side-project-list{grid-template-columns:1fr}}
+@media(max-width:520px){.side-entry{padding:24px 0;gap:8px}.side-project{padding:24px;gap:20px;min-height:0}.side-projects{padding-bottom:60px}}

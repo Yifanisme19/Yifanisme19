@@ -10,7 +10,8 @@
     <meta name="author" content="Yifan Lee" />
     <meta name="keywords" content="Yifan Lee, YIFAN, full stack developer Malaysia, web developer Johor, PHP developer, Laravel developer, MySQL, AI integration, AI agents, workflow automation, developer portfolio" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="theme-color" content="#07110e" />
+    <meta name="theme-color" content="#f7f8fb" />
+    <script>try{var t=localStorage.getItem("theme");document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light")}catch(e){document.documentElement.setAttribute("data-theme","light")}</script>
     <title>Yifan Lee — Full Stack Developer Malaysia | PHP &amp; AI</title>
     <link rel="canonical" href="https://yifanisme.vercel.app/" />
     <meta property="og:type" content="website" />
@@ -71,12 +72,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260105-content-refresh" />
+    <link rel="stylesheet" href="styles.css?v=20261006-light-dark" />
   </head>
   <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="ambient" aria-hidden="true"><i class="glow glow-claw"></i><i class="glow glow-gpt"></i><i class="glow glow-php"></i></div>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="YIFAN home"
         ><span>YF</span><b>YIFAN</b></a
@@ -86,6 +89,7 @@
         ><a href="#about">About</a>
       </nav>
       <button class="header-menu" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="header-links"><svg viewBox="0 0 18 18" aria-hidden="true"><rect class="l1" x="2" y="6" width="14" height="2" rx="1"/><rect class="l2" x="2" y="10" width="14" height="2" rx="1"/></svg></button>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.9 1.9M16.8 16.8l1.9 1.9M18.7 5.3l-1.9 1.9M7.2 16.8l-1.9 1.9" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg></button>
       <a class="header-cta" href="mailto:leeyifan19@gmail.com"
         >Let's talk <span>↗</span></a
       >
@@ -94,19 +98,14 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">
-            <span class="status-dot"></span> Full Stack Developer · Available
-            for opportunities
-          </p>
+          <p class="eyebrow"><span class="status-dot"></span> Full Stack Developer <em>/</em> Available for opportunities</p>
           <h1 id="hero-title">
             I build the systems companies rely on.<br /><em>AI helps them move faster.</em>
           </h1>
           <p class="hero-intro">
             I'm Yifan Lee, a full stack developer in Johor, Malaysia. I build
-            internal business platforms, web applications and AI-assisted
-            workflows with PHP, Laravel and MySQL. My recent work is used by
-            whole companies and was run live for customers at a company
-            seminar.
+            business platforms and AI-assisted workflows with PHP, Laravel
+            and MySQL, used company-wide and by customers.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#work"
@@ -121,123 +120,134 @@
             >
           </div>
         </div>
-        <aside class="hero-panel" aria-label="Developer profile summary">
-          <div class="panel-top">
-            <span>AT A GLANCE</span><span>Johor · MY</span>
+        <aside class="hero-panel" aria-label="Sample run of the Website Checker AI workflow">
+          <span class="float-badge fb-claw" aria-hidden="true"><img src="assets/openclaw-lobster.svg" alt="" width="34" height="34" /></span>
+          <span class="float-badge fb-claude" aria-hidden="true"><i class="logo" style="--logo:url(assets/logo-claude.svg)"></i></span>
+          <span class="float-badge fb-gpt" aria-hidden="true"><i class="logo" style="--logo:url(assets/logo-openai.svg)"></i></span>
+          <div class="term">
+            <div class="term-bar"><span class="dots"><i></i><i></i><i></i></span><span>website-checker · sample run</span><span class="live"><b></b>live</span></div>
+            <div class="term-body" role="presentation">
+              <p class="t1"><span class="prompt">$</span> openclaw run website-qa --workers 3</p>
+              <p class="t2 dim">› request received from internal system (API)</p>
+              <p class="t3"><span class="w">worker-1</span> copy ✓ layout ✓ mobile ✓</p>
+              <p class="t4"><span class="w">worker-2</span> copy ✓ layout ✓ info ✓</p>
+              <p class="t5"><span class="w">worker-3</span> copy ✓ layout … <span class="spin">◐</span></p>
+              <p class="t6 ok">✓ report ready · about 10–12 min per site</p>
+              <p class="t7 warn">◉ waiting for human review<span class="caret"></span></p>
+            </div>
+            <div class="term-foot"><span>3 in parallel</span><span>Mac mini M4 · 16 GB</span><span>human-in-the-loop</span></div>
           </div>
-          <div class="monogram">YF<span>_</span></div>
-          <dl>
-            <div><dt>ROLE</dt><dd>Full Stack Developer</dd></div>
-            <div><dt>NOW</dt><dd>Newpages Network Sdn Bhd</dd></div>
-            <div><dt>STRENGTH</dt><dd>Business systems · AI automation</dd></div>
-            <div><dt>EDUCATION</dt><dd>BSE (Hons), First Class</dd></div>
-          </dl>
         </aside>
       </section>
 
+      <div class="stack-rail" aria-label="Technologies and AI tools I work with"><div class="rail-track"><div class="rail-group"><span style="--c:#8e98e0"><i class="logo" style="--logo:url(assets/logo-php.svg)"></i>PHP</span><span style="--c:#ff5144"><i class="logo" style="--logo:url(assets/logo-laravel.svg)"></i>Laravel</span><span style="--c:#52b3d8"><i class="logo" style="--logo:url(assets/logo-mysql.svg)"></i>MySQL</span><span style="--c:#c9a98a"><i class="logo" style="--logo:url(assets/logo-mariadb.svg)"></i>MariaDB</span><span style="--c:#f3d83d"><i class="logo" style="--logo:url(assets/logo-javascript.svg)"></i>JavaScript</span><span style="--c:#4cc9f5"><i class="logo" style="--logo:url(assets/logo-flutter.svg)"></i>Flutter</span><span style="--c:#6fa8dc"><i class="logo" style="--logo:url(assets/logo-wordpress.svg)"></i>WordPress</span><span style="--c:#fff"><img src="assets/openclaw-lobster.svg" alt="" width="22" height="22" />OpenClaw</span><span style="--c:#3fd2a8"><i class="logo" style="--logo:url(assets/logo-openai.svg)"></i>ChatGPT</span><span style="--c:#e8825f"><i class="logo" style="--logo:url(assets/logo-claude.svg)"></i>Claude</span></div><div class="rail-group" aria-hidden="true"><span style="--c:#8e98e0"><i class="logo" style="--logo:url(assets/logo-php.svg)"></i>PHP</span><span style="--c:#ff5144"><i class="logo" style="--logo:url(assets/logo-laravel.svg)"></i>Laravel</span><span style="--c:#52b3d8"><i class="logo" style="--logo:url(assets/logo-mysql.svg)"></i>MySQL</span><span style="--c:#c9a98a"><i class="logo" style="--logo:url(assets/logo-mariadb.svg)"></i>MariaDB</span><span style="--c:#f3d83d"><i class="logo" style="--logo:url(assets/logo-javascript.svg)"></i>JavaScript</span><span style="--c:#4cc9f5"><i class="logo" style="--logo:url(assets/logo-flutter.svg)"></i>Flutter</span><span style="--c:#6fa8dc"><i class="logo" style="--logo:url(assets/logo-wordpress.svg)"></i>WordPress</span><span style="--c:#fff"><img src="assets/openclaw-lobster.svg" alt="" width="22" height="22" />OpenClaw</span><span style="--c:#3fd2a8"><i class="logo" style="--logo:url(assets/logo-openai.svg)"></i>ChatGPT</span><span style="--c:#e8825f"><i class="logo" style="--logo:url(assets/logo-claude.svg)"></i>Claude</span></div></div></div>
+
       <section class="proof-strip" aria-label="Results at a glance">
-        <div><strong>500+</strong><span>competitor reports generated for small businesses at a live company seminar</span></div>
-        <div><strong>6×</strong><span>more websites reviewed in the same 30 minutes with an AI review workflow</span></div>
-        <div><strong>Company-wide</strong><span>internal systems used by staff every day: rewards, leave, announcements, AI library</span></div>
-        <div><strong>10,000+</strong><span>customers served by the company system where I added cost-saving AI integration</span></div>
+        <div><strong>500+</strong><span>competitor reports at one live seminar</span></div>
+        <div><strong>6×</strong><span>more websites reviewed in 30 minutes, on one Mac mini</span></div>
+        <div><strong>Company-wide</strong><span>internal systems used by staff daily</span></div>
+        <div><strong>10,000+</strong><span>customers on the system I cut AI cost for</span></div>
       </section>
 
       <section class="section projects" id="work">
         <div class="section-head">
           <div>
-            <p class="section-index">01 / SELECTED WORK</p>
+            <p class="section-index">// 01 · selected work</p>
             <h2>Systems built for<br />real operations.</h2>
           </div>
           <p>
-            Each project shows what it is, how big it is, what I did
-            myself, and what changed. Select a card for the full story.
+            Select a card to see the problem, my role and the result.
           </p>
         </div>
-        <p class="glossary"><b>Plain-language guide</b> <span><strong>OpenClaw</strong> is an AI agent platform that follows written instructions to complete tasks.</span> <span><strong>PHP / Laravel</strong> are languages and tools for building web applications.</span> <span><strong>API</strong> is how two software systems talk to each other.</span></p>
+        <details class="glossary"><summary>New to the jargon? <span>Plain-language guide</span></summary><div><span><strong>OpenClaw</strong> is an AI agent platform that follows written instructions to complete tasks.</span><span><strong>PHP / Laravel</strong> are languages and tools for building web applications.</span><span><strong>API</strong> is how two software systems talk to each other.</span></div></details>
         <div class="filters" role="group" aria-label="Filter projects">
           <button class="filter active" data-filter="all" aria-pressed="true">All work</button
           ><button class="filter" data-filter="php" aria-pressed="false">PHP systems</button
           ><button class="filter" data-filter="ai" aria-pressed="false">AI automation</button><button class="filter" data-filter="tools" aria-pressed="false">Tools &amp; internal systems</button>
         </div>
 <div class="work-group featured-work"><div class="work-group-heading"><h3>Featured Projects</h3><p>Full-stack systems and applied AI, built around real operational needs.</p></div><div class="project-grid case-list bento-grid">
-<article class="project case-study " data-category="php" id="project-3"><button class="case-open" type="button" aria-haspopup="dialog" aria-controls="project-dialog" data-project="project-3"><span class="sr-only">Explore Online Admission System</span></button>
- <div class="case-heading"><p class="project-num">Web application · Education · 2022–2023</p><h3>Online Admission System</h3><p>A website where applicants apply to a university online, replacing a manual process.<span class="scale"><b>Scope</b> End-to-end admissions workflow, built from scratch</span></p><div class="tags"><span>Laravel 8</span><span>Livewire</span><span>MySQL</span><span>MVC</span></div></div>
- <div class="case-body"><figure class="case-preview"><img src="assets/ui/online-admission.png" alt="Online Admission System programme application interface with application progress and programme selection" width="1672" height="941" loading="lazy" /><figcaption>Online Admission System · Programme application interface preview.</figcaption></figure><details class="case-details"><summary>Explore the project</summary><div class="case-detail-content">
-<section class="case-section"><h4>The problem</h4><p>University admissions needed to move from a manual process to an online system, and the workflow needed to improve.</p></section>
-<section class="case-section"><h4>My role</h4><p>I developed the system from scratch and worked with the relevant departments to agree requirements and workflow.</p></section>
-<section class="case-section"><h4>What I built</h4><ul class="case-list-items"><li>Gathered requirements from the departments involved and turned them into the application flow.</li><li>Built the programme application and programme selection interface, with progress tracking for applicants.</li><li>Built the system with Laravel 8, Livewire and MySQL using an MVC structure.</li></ul></section>
-<section class="case-section case-result"><h4>Result</h4><p>Digitized the admission process and improved the workflow with input from the departments involved.</p></section>
-<section class="case-section"><h4>Tech in context</h4><p>Laravel handles routing, validation and business rules. Livewire powers the interactive application pages. MySQL stores applicant and programme data.</p></section>
-</div></details></div></article>
+
 <article class="project case-study qa-feature" data-category="ai" id="project-1">
 <button class="case-open" type="button" aria-haspopup="dialog" aria-controls="project-dialog" data-project="project-1"><span class="sr-only">Explore AI Website QA &amp; Operations</span></button>
-<div class="case-heading"><p class="project-num">Website quality · Business operations · 2026</p><h3>AI Website QA <br />&amp; Operations</h3><p>An AI assistant that runs the team’s pre-launch website checklist, so each site is reviewed faster and the same way every time.<span class="scale"><b>Scale</b> Used by the team on pre-launch reviews</span></p><div class="tags"><span>OpenClaw</span><span>Custom Skills</span><span>Browser Automation</span><span>Internal APIs</span></div></div>
+<div class="case-heading"><p class="project-num">Website quality · Business operations · 2026</p><h3>AI Website QA <br />&amp; Operations</h3><p>An AI reviewer that checks websites in the background before launch. A person only reviews the finished reports instead of checking every site by hand.<span class="scale"><b>Scale</b> Runs on one entry-level Mac mini · 3 sites in parallel · API-triggered by the internal system</span><span class="scale role"><b>Role</b> Core research team member · built the skills and integrations</span></p><div class="tags"><span>OpenClaw</span><span>Custom Skills</span><span>Browser Automation</span><span>Internal APIs</span><span>Human-in-the-loop</span></div></div>
 <div class="case-body">
-<div class="qa-result"><div class="qa-comparison"><span><strong>+500%</strong> Website review throughput</span></div><p>From 1 to 6 sites reviewed in the same 30 minutes.</p></div>
+<div class="qa-result"><div class="qa-comparison"><span><strong>1</strong> Manual review</span><span><strong>6×</strong> AI workflow</span></div><p>Websites reviewed per 30 minutes, on the lowest-spec Mac mini M4 (16 GB RAM, 256 GB storage).</p></div>
 <figure class="case-preview"><img src="assets/ui/website-checker.webp" alt="Website Checker interface for pre-launch website reviews" width="1706" height="922" loading="lazy" /><figcaption>Website Checker · Pre-launch review workflow</figcaption></figure>
 <details class="case-details"><summary>Explore the project</summary><div class="case-detail-content">
 <section class="case-section"><h4>What is OpenClaw?</h4><p>OpenClaw is an AI agent platform. It follows written instructions (“skills”) and uses tools such as a web browser to complete tasks on its own.</p></section>
-<section class="case-section"><h4>The problem</h4><p>Pre-launch website reviews meant repeating the same manual checks on every site, which was slow and could be inconsistent.</p></section>
-<section class="case-section"><h4>My role</h4><p>Member of the company’s early core OpenClaw research team. I wrote the review skills and configured the integrations with internal systems.</p></section>
-<section class="case-section"><h4>What I built</h4><ul class="case-list-items"><li>Turned the team’s pre-launch checklist into custom OpenClaw skills that the agent follows on every site.</li><li>Set up browser automation to check copy, layout, responsiveness and business information, and report findings back to the team.</li><li>Connected OpenClaw to internal system APIs so it can run website backend tasks such as uploading products and services.</li><li>Kept API tokens out of prompts, skills and outputs, so credentials are never exposed.</li></ul></section>
-<section class="case-section"><h4>Review workflow</h4><ol class="workflow-steps"><li>Website URL + team checklist</li><li>OpenClaw agent + custom review skills</li><li>Browser checks: copy, layout, responsiveness, information</li><li>Review findings for the team</li></ol></section>
-<section class="case-section case-result"><h4>Result</h4><p>Review throughput rose from one website to six in 30 minutes, reducing repetitive manual review. This figure applies specifically to website QA.</p></section>
-<section class="case-section"><h4>Tech in context</h4><p>OpenClaw with custom skills holds the review rules. Browser automation performs the checks. Internal REST APIs handle backend tasks.</p></section>
+<section class="case-section"><h4>The problem</h4><p>Before every launch, a person had to open each website and repeat the same checks by hand: wording, layout, mobile responsiveness and business information. It was slow, and the quality of the check depended on who did it and how tired they were.</p></section>
+<section class="case-section"><h4>My role</h4><p>Member of the company’s early core OpenClaw research team. I wrote the review skills, set up the browser automation and connected the workflow to the internal system through its API.</p></section>
+<section class="case-section"><h4>How it works</h4><ol class="workflow-steps"><li><strong>Request:</strong> the internal system sends a website to review through an API call.</li><li><strong>Queue:</strong> reviews run in the background, up to 3 at a time on one Mac mini, so nobody waits at a screen.</li><li><strong>AI review:</strong> an OpenClaw agent follows the team’s checklist in a real browser. It checks copy, layout, responsiveness and business information. One report takes about 10 to 12 minutes.</li><li><strong>Report:</strong> findings return to the internal system.</li><li><strong>Human decision:</strong> a reviewer reads the report and makes the final call.</li></ol></section>
+<section class="case-section"><h4>What I built</h4><ul class="case-list-items"><li>Turned the team’s pre-launch checklist into custom OpenClaw skills that the agent follows on every site.</li><li>Set up browser automation to check copy, layout, responsiveness and business information.</li><li>Integrated the workflow with the internal system through its API, so reviews run automatically in the background.</li><li>Also connected OpenClaw to internal APIs for website backend tasks such as uploading products and services.</li><li>Kept API tokens out of prompts, skills and outputs, so credentials are never exposed.</li></ul></section>
+<section class="case-section"><h4>Why a human stays in the loop</h4><p>The AI does the repetitive checking. A person stays as the reviewer and approves the result. This keeps accountability with people, and cuts the time spent opening and checking each website one by one.</p></section>
+<section class="case-section case-result"><h4>Result</h4><p>Review throughput rose from 1 website to 6 in 30 minutes (6×, a +500% increase). That comes from 3 parallel workers, each finishing a report in about 10 to 12 minutes, on the lowest-spec Mac mini M4. Reviewers now check finished reports instead of every website. This figure applies specifically to website QA.</p></section>
+<section class="case-section"><h4>Tech in context</h4><p>OpenClaw with custom skills holds the review rules. Browser automation performs the checks. Internal REST APIs trigger reviews and return reports. The whole setup runs on an entry-level Mac mini, so the cost to run it is low, and more machines could add capacity.</p></section>
 </div></details></div></article>
 <article class="project case-study " data-category="php" id="project-2"><button class="case-open" type="button" aria-haspopup="dialog" aria-controls="project-dialog" data-project="project-2"><span class="sr-only">Explore Employee Reward Shop</span></button>
- <div class="case-heading"><p class="project-num">Internal platform · Employee rewards · 2025–2026</p><h3>Employee Reward Shop</h3><p>One system for requesting, managing and approving employee rewards, replacing PDFs and Excel files.<span class="scale"><b>Scale</b> Company-wide internal platform</span></p><div class="tags"><span>PHP 8.1</span><span>MariaDB</span><span>JavaScript</span></div></div>
+ <div class="case-heading"><p class="project-num">Internal platform · Employee rewards · 2025–2026</p><h3>Employee Reward Shop</h3><p>One system for requesting, managing and approving employee rewards, replacing PDFs and Excel files.<span class="scale"><b>Scale</b> Company-wide internal platform</span><span class="scale role"><b>Role</b> Backend developer · owned the entire backend</span></p><div class="tags"><span>PHP 8.1</span><span>MariaDB</span><span>Custom MVC</span><span>Backend</span></div></div>
  <div class="case-body"><figure class="case-preview"><img src="assets/ui/rewards-hub.webp" alt="Employee Reward Shop interface preview" loading="lazy" /><figcaption>Employee Reward Shop · Recreated with demo data. The original is internal and confidential.</figcaption></figure><details class="case-details"><summary>Explore the project</summary><div class="case-detail-content">
 <section class="case-section"><h4>The problem</h4><p>Reward requests were tracked through PDFs and Excel records, with no single place to manage them and no systematic approval process.</p></section>
-<section class="case-section"><h4>My role</h4><p>I developed the platform, from requirements through to the database, backend, interface and approval flow.</p></section>
-<section class="case-section"><h4>What I built</h4><ul class="case-list-items"><li>Designed the database in MariaDB for rewards, requests and approvals.</li><li>Built the request and approval workflow, so administrators approve or reject requests inside the system instead of across PDFs and Excel.</li><li>Built the interface in PHP 8.1 and JavaScript on a custom MVC structure.</li></ul></section>
+<section class="case-section"><h4>My role</h4><p>I was responsible for the entire backend: the database, the application logic and the approval flow. The interface was built by another team member on top of my backend.</p></section>
+<section class="case-section"><h4>What I built</h4><ul class="case-list-items"><li>Designed the database in MariaDB for rewards, requests and approvals.</li><li>Built the request and approval workflow, so administrators approve or reject requests inside the system instead of across PDFs and Excel.</li><li>Wrote all server-side logic in PHP 8.1 on a custom MVC structure, so the interface can rely on it.</li></ul></section>
 <section class="case-section case-result"><h4>Result</h4><p>Replaced manual PDF and Excel handling across the company. Administrators now manage and approve requests in one system.</p></section>
-<section class="case-section"><h4>Tech in context</h4><p>PHP 8.1 and a custom MVC framework run the application logic. MariaDB stores request and approval data. JavaScript powers the interface.</p></section>
-</div></details></div></article></div></div>
-<div class="work-group automation-work"><div class="work-group-heading"><h3>Selected Automation Work</h3><p>Three focused uses of OpenClaw AI agents with custom business rules. Client details for the two business automations are confidential, so they are described by what they do.</p></div><div class="project-grid case-list bento-grid"><article class="project case-study compact-case" data-category="ai" id="project-reviews"><button class="case-open" type="button" aria-haspopup="dialog" aria-controls="project-dialog" data-project="project-reviews"><span class="sr-only">Explore Google Reviews Monitoring</span></button><div class="case-heading"><p class="project-num">Customer feedback · Client confidential</p><h3>Google Reviews Monitoring</h3><p>Keep track of business reviews and turn feedback into timely action.</p></div><div class="case-body"><p class="mini-flow">Collect reviews → Evaluate feedback → Alert / Publish</p><div class="work-output"><span>Output</span><p>Negative-review alerts and scheduled website news content.</p></div><details class="case-details"><summary>Explore the project</summary><div class="case-detail-content">
+<section class="case-section"><h4>Tech in context</h4><p>PHP 8.1 and a custom MVC framework run the application logic. MariaDB stores request and approval data.</p></section>
+</div></details></div></article>
+<article class="project case-study " data-category="tools" id="project-4"><button class="case-open" type="button" aria-haspopup="dialog" aria-controls="project-dialog" data-project="project-4"><span class="sr-only">Explore CustomGPT Library</span></button>
+ <div class="case-heading"><p class="project-num">Knowledge system · Internal AI tools · 2025–2026</p><h3>CustomGPT Library</h3><p>One internal home for the company’s AI prompts, skills, CustomGPTs and tools.<span class="scale"><b>Scale</b> Company-wide internal system</span><span class="scale role"><b>Role</b> Backend developer · owned the entire backend</span></p><div class="tags"><span>PHP 8.1</span><span>MariaDB</span><span>Custom MVC</span><span>Backend</span></div></div>
+ <div class="case-body"><figure class="case-preview"><img src="assets/ui/ai-workspace-3x2.png" alt="CustomGPT Library interface preview" width="1536" height="1024" loading="lazy" /><figcaption>CustomGPT Library · Recreated with demo data. The original is internal and confidential.</figcaption></figure><details class="case-details"><summary>Explore the project</summary><div class="case-detail-content">
+<section class="case-section"><h4>The problem</h4><p>Prompts, skills, CustomGPTs and tools were scattered across different platforms, so staff could not easily find what already existed.</p></section>
+<section class="case-section"><h4>My role</h4><p>I was responsible for the entire backend: the database design and all server-side logic. The interface was built by another team member on top of my backend.</p></section>
+<section class="case-section"><h4>What I built</h4><ul class="case-list-items"><li>A single internal system that gathers prompts, skills, CustomGPTs and tools under a shared structure.</li><li>Wrote the backend in PHP 8.1 and MariaDB, deployed for the whole company.</li></ul></section>
+<section class="case-section case-result"><h4>Result</h4><p>Employees can find AI resources suited to their needs in one place instead of searching across platforms.</p></section>
+<section class="case-section"><h4>Tech in context</h4><p>PHP 8.1 runs the application. MariaDB stores the resource catalogue.</p></section>
+</div></details></div></article>
+</div></div>
+<div class="work-group automation-work"><div class="work-group-heading"><h3>Selected Automation Work</h3><p>OpenClaw AI agents with custom business rules. Client details are confidential.</p></div><div class="project-grid case-list bento-grid"><article class="project case-study compact-case" data-category="ai" id="project-reviews"><button class="case-open" type="button" aria-haspopup="dialog" aria-controls="project-dialog" data-project="project-reviews"><span class="sr-only">Explore Google Reviews Monitoring</span></button><div class="case-heading"><p class="project-num">Customer feedback · Client confidential</p><h3>Google Reviews Monitoring</h3><p>Keep track of business reviews and turn feedback into timely action.<span class="scale"><b>Scale</b> Client details confidential</span><span class="scale role"><b>Role</b> Built the workflow and rules myself</span></p></div><div class="case-body"><p class="mini-flow">Collect reviews → Evaluate feedback → Alert / Publish</p><div class="work-output"><span>Output</span><p>Negative-review alerts and scheduled website news content.</p></div><details class="case-details"><summary>Explore the project</summary><div class="case-detail-content">
 <section class="case-section"><h4>The problem</h4><p>Teams needed to react quickly to customer reviews without checking review sites by hand.</p></section>
 <section class="case-section"><h4>My role</h4><p>I configured the OpenClaw workflow and wrote the business rules behind it.</p></section>
 <section class="case-section"><h4>What I built</h4><ul class="case-list-items"><li>Collects Google reviews and flags negative feedback with an alert to the team.</li><li>Turns positive reviews into reflection-style copy, published on a schedule to the business website’s news section.</li></ul></section>
 <section class="case-section case-result"><h4>Result</h4><p>The team is alerted to negative reviews, and the website news section is refreshed on a schedule. Client details and figures are confidential.</p></section>
 <section class="case-section"><h4>Tech in context</h4><p>OpenClaw with custom rules for classifying reviews, and scheduled runs for publishing.</p></section>
 </div></details></div></article>
-<article class="project case-study compact-case" data-category="ai" id="project-leads"><button class="case-open" type="button" aria-haspopup="dialog" aria-controls="project-dialog" data-project="project-leads"><span class="sr-only">Explore Lead Qualification Automation</span></button><div class="case-heading"><p class="project-num">Sales research · Client confidential</p><h3>Lead Qualification Automation</h3><p>Find potential customers that match the sales team’s criteria.</p></div><div class="case-body"><p class="mini-flow">Research → Check criteria → Qualify leads</p><div class="work-output"><span>Output</span><p>Relevant leads for the sales team.</p></div><details class="case-details"><summary>Explore the project</summary><div class="case-detail-content">
+<article class="project case-study compact-case" data-category="ai" id="project-leads"><button class="case-open" type="button" aria-haspopup="dialog" aria-controls="project-dialog" data-project="project-leads"><span class="sr-only">Explore Lead Qualification Automation</span></button><div class="case-heading"><p class="project-num">Sales research · Client confidential</p><h3>Lead Qualification Automation</h3><p>Find potential customers that match the sales team’s criteria.<span class="scale"><b>Scale</b> Client details confidential</span><span class="scale role"><b>Role</b> Built the workflow and rules myself</span></p></div><div class="case-body"><p class="mini-flow">Research → Check criteria → Qualify leads</p><div class="work-output"><span>Output</span><p>Relevant leads for the sales team.</p></div><details class="case-details"><summary>Explore the project</summary><div class="case-detail-content">
 <section class="case-section"><h4>The problem</h4><p>Sales teams spent time researching prospects by hand before knowing whether they were worth contacting.</p></section>
 <section class="case-section"><h4>My role</h4><p>I configured the OpenClaw workflow and defined the business rules for qualifying leads.</p></section>
 <section class="case-section"><h4>What I built</h4><ul class="case-list-items"><li>Researches potential customers on the internet.</li><li>Checks each one against the sales team’s criteria.</li><li>Passes only qualified leads to the sales team.</li></ul></section>
 <section class="case-section case-result"><h4>Result</h4><p>The sales team receives pre-checked leads instead of raw research. Client details and figures are confidential.</p></section>
 <section class="case-section"><h4>Tech in context</h4><p>OpenClaw with custom rules for evaluating and qualifying leads.</p></section>
 </div></details></div></article>
-<article class="project case-study compact-case" data-category="ai" id="project-research"><button class="case-open" type="button" aria-haspopup="dialog" aria-controls="project-dialog" data-project="project-research"><span class="sr-only">Explore Competitor Research Automation</span></button><div class="case-heading"><p class="project-num">Customer-facing · Company seminar 2026</p><h3>Competitor Research Automation</h3><p>Turn competitor research into a report customers can use.<span class="scale"><b>Scale</b> 500+ reports generated at one seminar</span></p></div><div class="case-body"><p class="mini-flow">Research → Compare → Recommend</p><div class="work-output"><span>Output</span><p>Competitor comparisons and SEO &amp; GEO keyword suggestions.</p></div><details class="case-details"><summary>Explore the project</summary><div class="case-detail-content">
+<article class="project case-study compact-case" data-category="ai" id="project-research"><button class="case-open" type="button" aria-haspopup="dialog" aria-controls="project-dialog" data-project="project-research"><span class="sr-only">Explore Competitor Research Automation</span></button><div class="case-heading"><p class="project-num">Customer-facing · Company seminar 2026</p><h3>Competitor Research Automation</h3><p>Turn competitor research into a report customers can use.<span class="scale"><b>Scale</b> 500+ reports generated at one seminar</span><span class="scale role"><b>Role</b> Built the whole workflow myself</span></p></div><div class="case-body"><p class="mini-flow">Research → Compare → Recommend</p><div class="work-output"><span>Output</span><p>Competitor comparisons and SEO &amp; GEO keyword suggestions.</p></div><details class="case-details"><summary>Explore the project</summary><div class="case-detail-content">
 <section class="case-section"><h4>The problem</h4><p>Small business owners found it hard to see how they compared with competitors online and which keywords to target.</p></section>
 <section class="case-section"><h4>My role</h4><p>I built and configured the full workflow, from data collection to the customer report.</p></section>
 <section class="case-section"><h4>What I built</h4><ul class="case-list-items"><li>Configured OpenClaw to gather competitor information from the web.</li><li>Defined the comparison rules that assess each competitor’s strengths and weaknesses against the customer’s business.</li><li>Generated a customer report with a competitor comparison, website analysis, and AI-suggested SEO and GEO keywords.</li><li>Ran the workflow live at the company booth, so participants received a report during the event.</li></ul></section>
 <section class="case-section case-result"><h4>Result</h4><p>More than 500 reports generated at one event, helping small business owners understand their competitors and keyword opportunities.</p></section>
 <section class="case-section"><h4>Tech in context</h4><p>OpenClaw for research and report generation, with custom rules for comparison. GEO means optimizing content so AI assistants can find and recommend it.</p></section>
 </div></details></div></article></div></div>
-<div class="work-group tools-work"><div class="work-group-heading"><h3>Developer Tools &amp; Internal Systems</h3><p>The integrations and internal tools that support everyday work.</p></div><div class="project-grid case-list bento-grid"><article class="project case-study compact-case" data-category="tools" id="project-cli"><button class="case-open" type="button" aria-haspopup="dialog" aria-controls="project-dialog" data-project="project-cli"><span class="sr-only">Explore CLIProxyAPI Integration</span></button><div class="case-heading"><p class="project-num">AI infrastructure · Cost control</p><h3>CLIProxyAPI Integration</h3><p>A cost-control layer between internal tools and AI services.<span class="scale"><b>Scale</b> Supports AI features in a system serving 10,000+ customers</span></p></div><div class="case-body"><figure class="case-preview"><img src="assets/ui/cliproxyapi-demo-3x2.png" alt="Recreated CLIProxyAPI request monitoring interface with fictional demo data" width="1536" height="1024" loading="lazy" /><figcaption>CLIProxyAPI · Recreated interface with fictional demo data</figcaption></figure><div class="cli-overview"><p class="mini-flow">AI services → API relay → Internal tools</p><div class="work-output"><span>Output</span><p>An API integration supporting internal AI use and image generation.</p></div></div><details class="case-details"><summary>Explore the project</summary><div class="case-detail-content">
+<div class="work-group tools-work"><div class="work-group-heading"><h3>Developer Tools &amp; Internal Systems</h3><p>The integrations and internal tools that support everyday work.</p></div><div class="project-grid case-list bento-grid"><article class="project case-study compact-case" data-category="tools" id="project-cli"><button class="case-open" type="button" aria-haspopup="dialog" aria-controls="project-dialog" data-project="project-cli"><span class="sr-only">Explore CLIProxyAPI Integration</span></button><div class="case-heading"><p class="project-num">AI infrastructure · Cost control</p><h3>CLIProxyAPI Integration</h3><p>A cost-control layer between internal tools and AI services.<span class="scale"><b>Scale</b> Supports AI features in a system serving 10,000+ customers</span><span class="scale role"><b>Role</b> Researched, set up and integrated it</span></p></div><div class="case-body"><figure class="case-preview"><img src="assets/ui/cliproxyapi-demo-3x2.png" alt="Recreated CLIProxyAPI request monitoring interface with fictional demo data" width="1536" height="1024" loading="lazy" /><figcaption>CLIProxyAPI · Recreated interface with fictional demo data</figcaption></figure><div class="cli-overview"><p class="mini-flow">AI services → API relay → Internal tools</p><div class="work-output"><span>Output</span><p>An API integration supporting internal AI use and image generation.</p></div></div><details class="case-details"><summary>Explore the project</summary><div class="case-detail-content">
 <section class="case-section"><h4>The problem</h4><p>Pay-per-use API billing made AI and image-generation costs hard to control as usage grew.</p></section>
 <section class="case-section"><h4>My role</h4><p>I researched the option, set up the relay and integrated it with the internal tools.</p></section>
 <section class="case-section"><h4>What I built</h4><ul class="case-list-items"><li>Evaluated CLIProxyAPI as an API relay for internal AI workflows.</li><li>Deployed and configured the relay, and connected internal tools to it.</li></ul></section>
 <section class="case-section case-result"><h4>Result</h4><p>Reduced AI usage cost, saving roughly the cost of one ChatGPT Pro account compared with pay-per-use billing, while supporting higher-volume image generation. Capacity remains subject to the underlying services’ usage limits and terms.</p></section>
 <section class="case-section"><h4>Tech in context</h4><p>CLIProxyAPI is the relay layer. Internal REST integrations connect it to the company tools.</p></section>
 </div></details></div></article>
-<article class="project case-study " data-category="tools" id="project-4"><button class="case-open" type="button" aria-haspopup="dialog" aria-controls="project-dialog" data-project="project-4"><span class="sr-only">Explore CustomGPT Library</span></button>
- <div class="case-heading"><p class="project-num">Knowledge system · Internal AI tools · 2025–2026</p><h3>CustomGPT Library</h3><p>One internal home for the company’s AI prompts, skills, CustomGPTs and tools.<span class="scale"><b>Scale</b> Company-wide internal system</span></p><div class="tags"><span>PHP 8.1</span><span>MariaDB</span><span>JavaScript</span></div></div>
- <div class="case-body"><figure class="case-preview"><img src="assets/ui/ai-workspace-3x2.png" alt="CustomGPT Library interface preview" width="1536" height="1024" loading="lazy" /><figcaption>CustomGPT Library · Recreated with demo data. The original is internal and confidential.</figcaption></figure><details class="case-details"><summary>Explore the project</summary><div class="case-detail-content">
-<section class="case-section"><h4>The problem</h4><p>Prompts, skills, CustomGPTs and tools were scattered across different platforms, so staff could not easily find what already existed.</p></section>
-<section class="case-section"><h4>My role</h4><p>I designed and built the system.</p></section>
-<section class="case-section"><h4>What I built</h4><ul class="case-list-items"><li>A single internal system that gathers prompts, skills, CustomGPTs and tools under a shared structure.</li><li>Deployed as a PHP and MariaDB application for the whole company.</li></ul></section>
-<section class="case-section case-result"><h4>Result</h4><p>Employees can find AI resources suited to their needs in one place instead of searching across platforms.</p></section>
-<section class="case-section"><h4>Tech in context</h4><p>PHP 8.1 runs the application. MariaDB stores the resource catalogue. JavaScript powers the interface.</p></section>
-</div></details></div></article>
+
 <article class="project case-study " data-category="tools" id="project-5"><button class="case-open" type="button" aria-haspopup="dialog" aria-controls="project-dialog" data-project="project-5"><span class="sr-only">Explore Internal System</span></button>
- <div class="case-heading"><p class="project-num">Business operations · Legacy modernization</p><h3>Internal System</h3><p>Maintaining and upgrading the company’s Leave and Announcement systems, plus a daily calendar email.<span class="scale"><b>Scale</b> Used daily by all staff · PHP 5.6 codebase, partly upgraded to 8.1</span></p><div class="tags"><span>PHP 5.6 / 8.1</span><span>Custom MVC</span><span>MariaDB</span><span>Cron</span></div></div>
+ <div class="case-heading"><p class="project-num">Business operations · Legacy modernization</p><h3>Internal System</h3><p>Maintaining and upgrading the company’s Leave and Announcement systems, plus a daily calendar email.<span class="scale"><b>Scale</b> Used daily by all staff · PHP 5.6 codebase, partly upgraded to 8.1</span><span class="scale role"><b>Role</b> Full stack · front end and back end, built solo</span></p><div class="tags"><span>PHP 5.6 / 8.1</span><span>Custom MVC</span><span>MariaDB</span><span>Cron</span></div></div>
  <div class="case-body"><figure class="case-preview"><img src="assets/ui/leave-calendar-3x2.png" alt="Internal System interface preview" width="1536" height="1024" loading="lazy" /><figcaption>Internal System · Recreated with demo data. The original is internal and confidential.</figcaption></figure><details class="case-details"><summary>Explore the project</summary><div class="case-detail-content">
 <section class="case-section"><h4>The problem</h4><p>The existing Leave and Announcement systems were old, needed fixes and daily upkeep, and gave staff no daily overview of who was away.</p></section>
 <section class="case-section"><h4>My role</h4><p>I maintain these systems, handling improvements, bug fixes and upgrades on the legacy codebase.</p></section>
 <section class="case-section"><h4>What I built</h4><ul class="case-list-items"><li>Maintain and improve the Leave System and Announcement System that the whole company uses every day.</li><li>Built a cron job that emails a daily calendar summary to staff.</li><li>Moved parts of the legacy PHP 5.6 codebase to PHP 8.1.</li></ul></section>
 <section class="case-section case-result"><h4>Result</h4><p>Keeps daily company operations running, and staff now receive a calendar summary by email every day.</p></section>
 <section class="case-section"><h4>Tech in context</h4><p>PHP 5.6 and 8.1 on a custom MVC framework, MariaDB for data, and a scheduled cron job for the daily email.</p></section>
+</div></details></div></article>
+<article class="project case-study " data-category="php" id="project-3"><button class="case-open" type="button" aria-haspopup="dialog" aria-controls="project-dialog" data-project="project-3"><span class="sr-only">Explore Online Admission System</span></button>
+ <div class="case-heading"><p class="project-num">Web application · Education · 2022–2023</p><h3>Online Admission System</h3><p>A website where applicants apply to a university online, replacing a manual process.<span class="scale"><b>Scope</b> End-to-end admissions workflow, built from scratch</span><span class="scale role"><b>Role</b> Full stack · front end and back end, built solo</span></p><div class="tags"><span>Laravel 8</span><span>Livewire</span><span>MySQL</span><span>MVC</span></div></div>
+ <div class="case-body"><figure class="case-preview"><img src="assets/ui/online-admission.png" alt="Online Admission System programme application interface with application progress and programme selection" width="1672" height="941" loading="lazy" /><figcaption>Online Admission System · Programme application interface preview.</figcaption></figure><details class="case-details"><summary>Explore the project</summary><div class="case-detail-content">
+<section class="case-section"><h4>The problem</h4><p>University admissions needed to move from a manual process to an online system, and the workflow needed to improve.</p></section>
+<section class="case-section"><h4>My role</h4><p>I worked as the full stack developer: I wrote both the front end and the back end, and worked with the relevant departments to agree requirements and workflow.</p></section>
+<section class="case-section"><h4>What I built</h4><ul class="case-list-items"><li>Gathered requirements from the departments involved and turned them into the application flow.</li><li>Built the programme application and programme selection interface, with progress tracking for applicants.</li><li>Built the system with Laravel 8, Livewire and MySQL using an MVC structure.</li></ul></section>
+<section class="case-section case-result"><h4>Result</h4><p>Digitized the admission process and improved the workflow with input from the departments involved.</p></section>
+<section class="case-section"><h4>Tech in context</h4><p>Laravel handles routing, validation and business rules. Livewire powers the interactive application pages. MySQL stores applicant and programme data.</p></section>
 </div></details></div></article></div></div>
       </section>
 
@@ -252,7 +262,7 @@
           <div class="project-grid case-list bento-grid side-project-list">
             <article class="project case-study compact-case side-project" id="side-social-banner">
               <button class="case-open" type="button" aria-haspopup="dialog" aria-controls="project-dialog"><span class="sr-only">Explore Social Banner Studio</span></button>
-              <div class="case-heading"><p class="project-num">Creative tool · Personal project</p><h3>Social Banner Studio</h3><p>Create animated social overlays without starting from a blank timeline.<span class="scale"><b>Scale</b> Personal project, designed and built solo</span></p><div class="tags"><span>Instagram</span><span>YouTube</span><span>WhatsApp</span></div><div class="side-facts"><span>3 platforms</span><span>7 templates</span><span>PNG + video</span></div></div>
+              <div class="case-heading"><p class="project-num">Creative tool · Personal project</p><h3>Social Banner Studio</h3><p>Create animated social overlays without starting from a blank timeline.<span class="scale"><b>Scale</b> Personal project</span><span class="scale role"><b>Role</b> Designed and built it solo</span></p><div class="tags"><span>Instagram</span><span>YouTube</span><span>WhatsApp</span></div><div class="side-facts"><span>3 platforms</span><span>7 templates</span><span>PNG + video</span></div></div>
               <div class="case-body"><figure class="case-preview"><img src="assets/ui/social-banner-studio-sharp.png" alt="Updated Social Banner Studio editor showing platform templates, live preview, customization controls, and export actions" width="1440" height="1200" loading="lazy" /><figcaption>Social Banner Studio · Platform templates, live preview &amp; export</figcaption></figure>
                 <details class="case-details"><summary>Project details</summary><div class="case-detail-content">
                   <section class="case-section"><h4>The idea</h4><p>Common social animations should be quick to make. I built a template-based editor for follow banners, subscribe buttons, profile cards, comments, chat conversations, and push notifications.</p></section>
@@ -269,7 +279,7 @@
       <section class="section experience" id="experience">
         <div class="section-head">
           <div>
-            <p class="section-index">02 / EXPERIENCE</p>
+            <p class="section-index">// 02 · experience</p>
             <h2>Building across<br />the full stack.</h2>
           </div>
           <p>
@@ -284,12 +294,12 @@
               <p class="company">NEWPAGES NETWORK SDN BHD</p>
               <h3>Full Stack Developer</h3>
               <p>Build full-stack business systems across frontend, backend, database and deployment, and design AI automations on OpenClaw.</p>
-              <ul class="achievements">
+              <details class="achievements-wrap" open><summary>Key achievements <span>4</span></summary><ul class="achievements">
                 <li>Part of the early core OpenClaw research team, writing custom skills and tool integrations.</li>
-                <li>Built the pre-launch Website Checker, raising review throughput from 1 to 6 websites per 30 minutes.</li>
+                <li>Built the pre-launch Website Checker: it runs in the background through the internal system’s API, 3 sites at a time on an entry-level Mac mini, raising throughput from 1 to 6 websites per 30 minutes and leaving people to review the reports.</li>
                 <li>Delivered the Competitor Research workflow used at the 2026 company seminar, generating 500+ reports for small businesses.</li>
                 <li>Integrated CLIProxyAPI to cut AI usage cost for the company system serving 10,000+ customers.</li>
-              </ul>
+              </ul></details>
             </div>
             <span class="role-no">04</span>
           </article>
@@ -299,12 +309,12 @@
               <p class="company">NEWPAGES NETWORK SDN BHD</p>
               <h3>PHP Developer</h3>
               <p>Delivered internal platforms and CMS plugins using PHP, JavaScript, MySQL and custom MVC.</p>
-              <ul class="achievements">
-                <li>Replaced PDF and Excel reward handling with the Employee Reward Shop (PHP 8.1, MariaDB), used company-wide.</li>
-                <li>Built the CustomGPT Library to bring scattered prompts, skills, CustomGPTs and tools into one internal system.</li>
+              <details class="achievements-wrap"><summary>Key achievements <span>4</span></summary><ul class="achievements">
+                <li>Built the entire backend of the Employee Reward Shop (PHP 8.1, MariaDB), replacing PDF and Excel reward handling company-wide.</li>
+                <li>Built the entire backend of the CustomGPT Library, bringing scattered prompts, skills, CustomGPTs and tools into one internal system.</li>
                 <li>Maintained and modernized legacy PHP 5.6 / 8.1 systems (Leave and Announcement) and added a daily calendar email.</li>
                 <li>Optimized database queries and fixed SQL injection and XSS risks in legacy modules.</li>
-              </ul>
+              </ul></details>
             </div>
             <span class="role-no">03</span>
           </article>
@@ -314,10 +324,10 @@
               <p class="company">ALVA PRODUCTION</p>
               <h3>iOS App Developer (Internship)</h3>
               <p>Developed a modular Flutter planning app for film-production teams.</p>
-              <ul class="achievements">
+              <details class="achievements-wrap"><summary>Key achievements <span>2</span></summary><ul class="achievements">
                 <li>Created reusable widgets and organised app state cleanly.</li>
                 <li>Wrote tests, debugged issues and collaborated remotely with the team.</li>
-              </ul>
+              </ul></details>
             </div>
             <span class="role-no">02</span>
           </article>
@@ -327,11 +337,11 @@
               <p class="company">SOUTHERN UNIVERSITY COLLEGE</p>
               <h3>PHP → Full Stack Developer</h3>
               <p>Built web systems for the university while completing my studies.</p>
-              <ul class="achievements">
+              <details class="achievements-wrap"><summary>Key achievements <span>3</span></summary><ul class="achievements">
                 <li>Built the Online Admission System from scratch with the departments involved.</li>
                 <li>Built the Open Day system, and redesigned and migrated the university website.</li>
                 <li>Maintained WordPress sites and supported campus technology and major events.</li>
-              </ul>
+              </ul></details>
             </div>
             <span class="role-no">01</span>
           </article>
@@ -340,7 +350,7 @@
 
       <section class="section about" id="about">
         <div class="manifesto">
-          <div class="engineering-identity"><p class="section-index">03 / ENGINEERING VIEW</p><div class="engineering-tools" aria-hidden="true"><figure class="engineering-tool codex-tool"><img src="assets/codex-icon.webp" alt="Codex" width="96" height="96" loading="lazy" /><figcaption>CODEX</figcaption></figure><figure class="engineering-tool claude-tool"><img src="assets/claude-icon.jpeg" alt="Claude" width="96" height="96" loading="lazy" /><figcaption>CLAUDE</figcaption></figure></div></div>
+          <div class="engineering-identity"><p class="section-index">// 03 · engineering view</p><div class="engineering-tools" aria-hidden="true"><figure class="engineering-tool codex-tool"><img src="assets/codex-icon.webp" alt="Codex" width="96" height="96" loading="lazy" /><figcaption>CODEX</figcaption></figure><figure class="engineering-tool claude-tool"><img src="assets/claude-icon.jpeg" alt="Claude" width="96" height="96" loading="lazy" /><figcaption>CLAUDE</figcaption></figure></div></div>
           <blockquote><span class="quote-lead">AI changes how we build.</span><br /><strong>It does not remove the need<br class="quote-break" /> to <mark>build responsibly.</mark></strong></blockquote>
           <p>
             Code is easier to produce than ever. Reliable products are not.
@@ -351,8 +361,8 @@
           </p>
         </div>
         <div class="skills-education">
-          <section class="capability-card" aria-labelledby="capabilities-title"><p class="section-index">CAPABILITIES</p><h2 id="capabilities-title">Skills, and where<br />I used them.</h2><div class="capability-groups"><div class="capability-group"><h3><span>01</span>Backend & systems</h3><div class="skill-cloud"><span>PHP 5.6 / 8+<small>Reward Shop, Library, Leave system</small></span><span>Laravel 8 · Livewire<small>Online Admission System</small></span><span>Custom MVC<small>Company internal systems</small></span><span>MySQL · MariaDB<small>All PHP projects</small></span><span>RESTful API<small>OpenClaw and CLIProxyAPI integrations</small></span><span>WordPress<small>University websites and CMS plugins</small></span></div></div><div class="capability-group"><h3><span>02</span>Interfaces & applications</h3><div class="skill-cloud"><span>HTML · CSS · JavaScript<small>Reward Shop, Library, this site</small></span><span>Flutter<small>Alva Production planning app</small></span></div></div><div class="capability-group"><h3><span>03</span>AI & automation</h3><div class="skill-cloud"><span>OpenClaw · AI Agents<small>Website Checker, Competitor Research, Reviews, Leads</small></span></div></div><div class="capability-group"><h3><span>04</span>Reliability & operations</h3><div class="skill-cloud"><span>Secure Coding<small>SQL injection and XSS fixes in legacy systems</small></span><span>Database Optimization<small>Query tuning in internal systems</small></span><span>IIS / Windows Server<small>Deployment</small></span></div></div></div></section>
-          <section class="education-card" aria-labelledby="education-title"><p class="section-index">EDUCATION</p><h2 id="education-title">Built on strong<br />foundations.</h2><div class="education-records">
+          <section class="capability-card" aria-labelledby="capabilities-title"><p class="section-index">// skills · evidence</p><h2 id="capabilities-title">Skills, and where<br />I used them.</h2><div class="capability-groups"><div class="capability-group"><h3><span>01</span>Backend & systems</h3><div class="skill-cloud"><span>PHP 5.6 / 8+<small>Reward Shop and Library backends, Leave system</small></span><span>Laravel 8 · Livewire<small>Online Admission System</small></span><span>Custom MVC<small>Company internal systems</small></span><span>MySQL · MariaDB<small>All PHP projects</small></span><span>RESTful API<small>OpenClaw and CLIProxyAPI integrations</small></span><span>WordPress<small>University websites and CMS plugins</small></span></div></div><div class="capability-group"><h3><span>02</span>Interfaces & applications</h3><div class="skill-cloud"><span>HTML · CSS · JavaScript<small>Admission System, Internal System, side project, this site</small></span><span>Flutter<small>Alva Production planning app</small></span></div></div><div class="capability-group"><h3><span>03</span>AI & automation</h3><div class="skill-cloud"><span>OpenClaw · AI Agents<small>Website Checker, Competitor Research, Reviews, Leads</small></span></div></div><div class="capability-group"><h3><span>04</span>Reliability & operations</h3><div class="skill-cloud"><span>Secure Coding<small>SQL injection and XSS fixes in legacy systems</small></span><span>Database Optimization<small>Query tuning in internal systems</small></span><span>IIS / Windows Server<small>Deployment</small></span></div></div></div></section>
+          <section class="education-card" aria-labelledby="education-title"><p class="section-index">// education</p><h2 id="education-title">Built on strong<br />foundations.</h2><div class="education-records">
             <article class="education-record"><p class="education-date">2023 — 2025 <span>DEGREE</span></p><h3>Bachelor of Software Engineering (Hons)</h3><p class="education-school">Southern University College</p><div class="education-result"><div class="grade"><span>CGPA</span><strong>3.82</strong></div><div class="education-honours"><span>First Class Honours</span><p>Dean’s List 2024/2025</p></div></div></article>
             <article class="education-record"><p class="education-date">2020 — 2022 <span>DIPLOMA</span></p><h3>Diploma in Information Technology</h3><p class="education-school">Southern University College</p><div class="education-result"><div class="grade"><span>CGPA</span><strong>3.61</strong></div><div class="education-honours"><p>Dean’s List 2022/2023</p></div></div></article>
           </div></section>
@@ -360,9 +370,9 @@
       </section>
 
       <section class="contact">
-        <p class="section-index">LET'S BUILD SOMETHING USEFUL</p>
+        <p class="section-index">// let’s build something useful</p>
         <h2>Have a problem worth<br /><em>solving well?</em></h2>
-        <p class="contact-note">Open to new opportunities. Based in Johor, Malaysia. Happy to talk about full stack, PHP or AI automation roles. Email is the fastest way to reach me.</p>
+        <p class="contact-note">Open to new opportunities in full stack, PHP or AI automation. Email is the fastest way to reach me.</p>
         <div class="contact-links">
           <a href="mailto:leeyifan19@gmail.com"
             >leeyifan19@gmail.com <span>↗</span></a
@@ -381,7 +391,7 @@
       ><a href="#top">BACK TO TOP ↑</a>
     </footer>
     <dialog id="project-dialog" class="project-dialog" aria-labelledby="dialog-title"><div class="dialog-toolbar"><span>PROJECT / CASE STUDY</span><button type="button" class="dialog-close" aria-label="Close project details">Close ×</button></div><div class="dialog-content"></div></dialog>
-    <script src="script.js?v=20260922-side-projects"></script>
+    <script src="script.js?v=20261006-light-dark"></script>
     <script src="header-glass.js"></script>
   </body>
 </html>

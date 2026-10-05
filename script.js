@@ -65,3 +65,38 @@ header.querySelectorAll('nav a').forEach(link => link.addEventListener('click', 
 document.addEventListener('click', event => { if (!header.contains(event.target)) closeHeaderMenu(); });
 document.addEventListener('keydown', event => { if (event.key === 'Escape' && header.classList.contains('menu-open')) { closeHeaderMenu(); headerMenu.focus(); } });
 window.addEventListener('scroll', closeHeaderMenu, { passive: true });
+
+
+const progressBar = document.querySelector('.scroll-progress');
+function updateProgress() {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar?.style.setProperty('--p', max > 0 ? Math.min(1, window.scrollY / max).toFixed(4) : 0);
+}
+window.addEventListener('scroll', updateProgress, { passive: true });
+updateProgress();
+
+const navLinks = [...document.querySelectorAll('#header-links a')];
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    navLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`));
+  });
+}, { rootMargin: '-45% 0px -50% 0px' });
+['work', 'experience', 'about'].forEach((id) => { const el = document.getElementById(id); if (el) navObserver.observe(el); });
+
+
+const themeToggle = document.querySelector('.theme-toggle');
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  const dark = theme === 'dark';
+  themeToggle?.setAttribute('aria-pressed', String(dark));
+  themeToggle?.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+  themeMeta?.setAttribute('content', dark ? '#0a0b10' : '#f7f8fb');
+}
+applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+themeToggle?.addEventListener('click', () => {
+  const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  try { localStorage.setItem('theme', next); } catch (error) { /* storage unavailable */ }
+});

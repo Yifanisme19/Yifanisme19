@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f7f7fb; --panel: #ffffff; --line: #e4e4ee;
+  --fg: #0d0f1a; --fg2: #333849; --muted: #5b6078; --subtle: #8a8fa6;
+  --grid: #0d0f1a0a; --grad-a: #0d0f1a; --accent: #6d4aff; --cyan: #0891b2; --lime: #4d7c0f;
+}
+.dark {
+  --bg: #07080d; --panel: #0f1119; --line: #1f2333;
+  --fg: #ffffff; --fg2: #cbd5e1; --muted: #94a3b8; --subtle: #64748b;
+  --grid: #ffffff08; --grad-a: #ffffff; --accent: #7c5cff; --cyan: #22d3ee; --lime: #a3e635;
+}
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --color-ink: var(--bg);
+  --color-panel: var(--panel);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-fg2: var(--fg2);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-accent: var(--accent);
+  --color-cyan: var(--cyan);
+  --color-lime: var(--lime);
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-ink text-fg2 font-sans transition-colors duration-300 antialiased overflow-x-hidden; }
+
+.grad-text {
+  background: linear-gradient(100deg, var(--grad-a) 10%, var(--accent) 50%, var(--cyan) 90%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.btn-grad {
+  background: linear-gradient(100deg, var(--grad-a) 0%, var(--accent) 55%, var(--cyan) 100%);
+  background-size: 200% 100%; color: #fff; transition: background-position .5s;
+  box-shadow: 0 8px 24px -8px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+.btn-grad:hover { background-position: 100% 0; }
+.dark .btn-grad { background-image: linear-gradient(100deg, var(--accent) 0%, #a78bfa 45%, var(--cyan) 100%); color: #07080d; }
+.card { @apply rounded-2xl border border-line bg-panel/70 backdrop-blur; }
+.chip { @apply rounded-full border border-line bg-fg/5 px-3 py-1 text-xs text-fg2; }
+.section-title { @apply font-display text-3xl font-bold text-fg sm:text-5xl; }
+
+.grid-bg {
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at 50% 30%, #000 30%, transparent 75%);
+}
+.blob { @apply absolute rounded-full blur-3xl opacity-25 dark:opacity-40 pointer-events-none; }
+
+#cursor-glow {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background: radial-gradient(500px circle at var(--x, 50%) var(--y, 30%), #7c5cff22, transparent 60%);
+}
+@media (hover: none) { #cursor-glow { display: none; } }
+
+.marquee { animation: marquee 30s linear infinite; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+.filter-btn[aria-pressed="true"] { @apply bg-fg text-ink; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee { animation: none; }
+}

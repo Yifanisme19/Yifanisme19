@@ -2,9 +2,8 @@
 
 Personal portfolio of Yifan Lee (https://yifanisme.vercel.app).
 
-- Vite + vanilla JS, GSAP, Motion, Lenis
-- English / Chinese: `src/i18n/en.js`, `src/i18n/zh.js` (add a language in `src/i18n/index.js`)
-- Zen ambience is synthesised in `src/audio.js` (no audio files)
+- Vite + vanilla JS, Tailwind CSS v4, GSAP, Motion
+- All copy lives in `src/content.js`; images in `public/images/`
 
 ```bash
 npm install

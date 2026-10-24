@@ -1,10 +1,12 @@
 import './style.css';
+import { inject } from '@vercel/analytics';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { animate, hover, press, stagger } from 'motion';
 import { content } from './content.js';
 import { stack, aiTools } from './icons.js';
 
+inject();
 gsap.registerPlugin(ScrollTrigger);
 
 const EMAIL = 'leeyifan19@gmail.com';

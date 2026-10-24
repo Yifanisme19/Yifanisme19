@@ -1,5 +1,6 @@
 import './style.css';
 import { inject } from '@vercel/analytics';
+import { injectSpeedInsights } from '@vercel/speed-insights';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { animate, hover, press, stagger } from 'motion';
@@ -7,6 +8,7 @@ import { content } from './content.js';
 import { stack, aiTools } from './icons.js';
 
 inject();
+injectSpeedInsights();
 gsap.registerPlugin(ScrollTrigger);
 
 const EMAIL = 'leeyifan19@gmail.com';

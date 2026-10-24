@@ -42,17 +42,3 @@ More detail (problem → solution → result) on the [portfolio](https://yifanis
 
 - **Full-time AI & Automation Engineer**: design, build, deploy and maintain agents, internal APIs and review flows
 - **AI integration consulting**: from advice to a finished system
-
-## About this repo
-
-This repo is my profile README and also the source of my portfolio site.
-
-- Vite + vanilla JS, Tailwind CSS v4, GSAP, Motion
-- Copy lives in `src/content.js`, images in `public/images/`
-- Deployed on Vercel
-
-```bash
-npm install
-npm run dev      # http://localhost:5173
-npm run build    # outputs dist/
-```

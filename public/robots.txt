@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yifanisme.vercel.app/sitemap.xml
+Sitemap: https://yifanisme.com/sitemap.xml

@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://yifanisme.vercel.app"><img src="https://img.shields.io/badge/Portfolio-yifanisme.vercel.app-111111?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"></a>
+  <a href="https://yifanisme.com"><img src="https://img.shields.io/badge/Portfolio-yifanisme.com-111111?style=for-the-badge" alt="Portfolio"></a>
 </p>
 
 I build AI automations and business systems that handle the repetitive work, so people can focus on the decisions that matter.
@@ -21,7 +21,7 @@ I build AI automations and business systems that handle the repetitive work, so 
 | **CLIProxyAPI billing** | Routed company AI tools through subscription accounts instead of metered API keys | Fixed monthly AI cost on a platform with 10,000+ customers |
 | **Employee Reward Shop** · **CustomGPT Library** · **Online Admission System** | Internal and university systems built backend-first | Manual PDF / Excel workflows replaced |
 
-More detail (problem → solution → result) on the [portfolio](https://yifanisme.vercel.app).
+More detail (problem → solution → result) on the [portfolio](https://yifanisme.com).
 
 ## Tech I work with
 
@@ -34,7 +34,6 @@ More detail (problem → solution → result) on the [portfolio](https://yifanis
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
 
 **AI & agents:** Codex · OpenClaw · CLIProxyAPI · agentic browsers · human-in-the-loop review flows
 
